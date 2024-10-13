@@ -7,7 +7,14 @@
 # Unignore readme
 !README.md
 
-# Uniginore bash scripts
-!start_services.sh
-!stop_services.sh
-!change_permissions.sh
+# Unignore bash scripts
+!linux_or_mac/
+!linux_or_mac/start_services.sh
+!linux_or_mac/stop_services.sh
+!linux_or_mac/change_permissions.sh
+
+# Unignore bash scripts
+!windows/
+!windows/change_permissions.ps1
+!windows/start_services.ps1
+!windows/stop_services.ps1
