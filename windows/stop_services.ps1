@@ -43,35 +43,39 @@ try {
 $BACKEND_PROJECT_DIR = 'soso-server'
 if (Test-Path $BACKEND_PROJECT_DIR) {
     Set-Location $BACKEND_PROJECT_DIR
+
+    cecho "Stopping $BACKEND_PROJECT_DIR..."
+
+    # -------------------
+    # 4. Stop the backend
+    # -------------------
+    docker-compose down
+    
+    cecho "$BACKEND_PROJECT_DIR stopped"
 } else {
     cecho "$BACKEND_PROJECT_DIR directory not found, skipping."
 }
 
-cecho "Stopping $BACKEND_PROJECT_DIR..."
-
-# -------------------
-# 4. Stop the backend
-# -------------------
-docker-compose down
-
-cecho "$BACKEND_PROJECT_DIR stopped"
+# ------------------------------
+# 5. Go back to parent directory
+# ------------------------------
+Set-Location ..
 
 # ---------------------------------------------------------------
-# 5. Change directory into frontend project directory if it exists
+# 6. Change directory into frontend project directory if it exists
 # ---------------------------------------------------------------
 $FRONTEND_PROJECT_DIR = 'soso-client'
 if (Test-Path $FRONTEND_PROJECT_DIR) {
-    Set-Location ..
     Set-Location $FRONTEND_PROJECT_DIR
+
+    cecho "Stopping $FRONTEND_PROJECT_DIR..."
+
+    # --------------------
+    # 6. Stop the frontend
+    # --------------------
+    docker-compose down
+    
+    cecho "$FRONTEND_PROJECT_DIR stopped"
 } else {
     cecho "$FRONTEND_PROJECT_DIR directory not found, skipping."
 }
-
-cecho "Stopping $FRONTEND_PROJECT_DIR..."
-
-# --------------------
-# 6. Stop the frontend
-# --------------------
-docker-compose down
-
-cecho "$FRONTEND_PROJECT_DIR stopped"

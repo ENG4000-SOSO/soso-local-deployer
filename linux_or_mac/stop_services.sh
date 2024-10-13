@@ -34,35 +34,39 @@ fi
 BACKEND_PROJECT_DIR='soso-server'
 if [ -d "$BACKEND_PROJECT_DIR" ]; then
     cd $BACKEND_PROJECT_DIR
+
+    cecho "Stopping $BACKEND_PROJECT_DIR..."
+
+    # -------------------
+    # 4. Stop the backend
+    # -------------------
+    docker compose down
+
+    cecho "$BACKEND_PROJECT_DIR stopped"
 else
     cecho "$BACKEND_PROJECT_DIR directory not found, skipping."
 fi
 
-cecho "Stopping $BACKEND_PROJECT_DIR..."
-
-# -------------------
-# 4. Stop the backend
-# -------------------
-docker compose down
-
-cecho "$BACKEND_PROJECT_DIR stopped"
+# ------------------------------
+# 5. Go back to parent directory
+# ------------------------------
+cd ..
 
 # ---------------------------------------------------------------
-# 5. Change directory into backend project directory if it exists
+# 6. Change directory into backend project directory if it exists
 # ---------------------------------------------------------------
 FRONTEND_PROJECT_DIR='soso-client'
 if [ -d "$FRONTEND_PROJECT_DIR" ]; then
-    cd ..
     cd $FRONTEND_PROJECT_DIR
+
+    cecho "Stopping $FRONTEND_PROJECT_DIR..."
+
+    # --------------------
+    # 7. Stop the frontend
+    # --------------------
+    docker compose down
+
+    cecho "$FRONTEND_PROJECT_DIR stopped"
 else
     cecho "$FRONTEND_PROJECT_DIR directory not found, skipping."
 fi
-
-cecho "Stopping $FRONTEND_PROJECT_DIR..."
-
-# --------------------
-# 6. Stop the frontend
-# --------------------
-docker compose down
-
-cecho "$FRONTEND_PROJECT_DIR stopped"
