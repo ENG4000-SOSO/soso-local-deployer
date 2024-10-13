@@ -1,0 +1,13 @@
+# Ignore everything
+*
+
+# Unignore gitignore
+!.gitignore
+
+# Unignore readme
+!README.md
+
+# Uniginore bash scripts
+!start_services.sh
+!stop_services.sh
+!change_permissions.sh
