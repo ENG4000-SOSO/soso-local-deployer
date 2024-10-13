@@ -13,8 +13,14 @@
 !linux_or_mac/stop_services.sh
 !linux_or_mac/change_permissions.sh
 
-# Unignore bash scripts
+# Unignore powershell scripts
 !windows/
 !windows/change_permissions.ps1
 !windows/start_services.ps1
 !windows/stop_services.ps1
+
+# Unignore cross-platform python scripts
+!cross_platform/
+!cross_platform/start_services.py
+!cross_platform/stop_services.py
+!cross_platform/change_permissions.py
