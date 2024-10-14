@@ -11,11 +11,17 @@ END = '\033[0m'
 
 
 def cecho(message):
-    print(f"{CYAN}{BOLD}{message}{END}")
+    if platform.system() in ['Linux', 'Darwin']:
+        print(f"{CYAN}{BOLD}{message}{END}")
+    else:
+        print(message)
 
 
 def errecho(message):
-    print(f"{RED}{BOLD}Error: {message}{END}")
+    if platform.system() in ['Linux', 'Darwin']:
+        print(f"{RED}{BOLD}Error: {message}{END}")
+    else:
+        print(f"Error: {message}")
 
 
 # Helper function to change ownership of a directory
