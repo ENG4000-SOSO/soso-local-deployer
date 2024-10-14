@@ -1,6 +1,7 @@
 import os
 import subprocess
 import sys
+import shutil
 
 
 BOLD = '\033[1m'
@@ -18,7 +19,7 @@ def errecho(message):
 
 
 def check_command_installed(command, error_message):
-    if subprocess.call(['which', command], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) != 0:
+    if shutil.which(command) is None:
         errecho(error_message)
         sys.exit(1)
 
