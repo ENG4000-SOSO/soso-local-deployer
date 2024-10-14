@@ -7,21 +7,8 @@
 # Unignore readme
 !README.md
 
-# Unignore bash scripts
-!linux_or_mac/
-!linux_or_mac/start_services.sh
-!linux_or_mac/stop_services.sh
-!linux_or_mac/change_permissions.sh
-
-# Unignore powershell scripts
-!windows/
-!windows/change_permissions.ps1
-!windows/start_services.ps1
-!windows/stop_services.ps1
-
 # Unignore cross-platform python scripts
-!cross_platform/
-!cross_platform/start_services.py
-!cross_platform/stop_services.py
-!cross_platform/change_permissions.py
-!cross_platform/reset_database.py
+!start_services.py
+!stop_services.py
+!change_permissions.py
+!reset_database.py
