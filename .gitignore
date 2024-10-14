@@ -7,6 +7,9 @@
 # Unignore readme
 !README.md
 
+# Unignore licence
+!LICENSE
+
 # Unignore cross-platform python scripts
 !start_services.py
 !stop_services.py
