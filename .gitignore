@@ -24,3 +24,4 @@
 !cross_platform/start_services.py
 !cross_platform/stop_services.py
 !cross_platform/change_permissions.py
+!cross_platform/reset_database.py
